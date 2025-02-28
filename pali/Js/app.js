@@ -8,4 +8,8 @@ function reverseWord(word) {
     return reversed;
 }
 
-console.log(reverseWord(userWord));
+if (reverseWord(userWord) === userWord) {
+    console.log(`La parola ${userWord} è palindroma`);
+} else {
+    console.log(`La parola ${userWord} non è palindroma`);
+}
