@@ -7,12 +7,22 @@ function randomNumber(){
     return randomNumber;
 }
 
-const sumNumber = userNumber + randomNumber();
+let sumNumber = randomNumber() + userNumber;
 
 function sumEvenOrOdd(sum) {
     if(sum % 2 === 0){
         return 'pari';
-    } else {
+    } else if (sum % 2 !== 0) {
         return 'dispari';
     }
+}
+
+if (sumEvenOrOdd(sumNumber) === evenOrOdd && sumEvenOrOdd(sumNumber) === 'pari'){
+    console.log (`Hai indovinato la somma dei numeri tra ${userNumber} + ${randomNumber()} = ${sumNumber} è pari`);
+} else if (sumEvenOrOdd(sumNumber) === evenOrOdd && sumEvenOrOdd(sumNumber) === 'dispari') {
+    console.log (`Hai indovinato la somma dei numeri tra ${userNumber} + ${randomNumber()} = ${sumNumber} è dispari`);
+} else if (sumEvenOrOdd(sumNumber) === evenOrOdd && sumEvenOrOdd(sumNumber) !== 'pari') {
+    console.log (`Hai persola somma dei numeri tra ${userNumber} + ${randomNumber()} = ${sumNumber} è dispari`);
+} else if (sumEvenOrOdd(sumNumber) === evenOrOdd && sumEvenOrOdd(sumNumber) !== 'dispari') {
+    console.log (`Hai persola somma dei numeri tra ${userNumber} + ${randomNumber()} = ${sumNumber} è pari`);
 }
