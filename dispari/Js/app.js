@@ -7,22 +7,15 @@ function randomNumber(){
     return randomNumber;
 }
 
-let sumNumber = randomNumber() + userNumber;
+let saveRandomNumber = randomNumber();
+let sumNumber = saveRandomNumber + userNumber;
 
 function sumEvenOrOdd(sum) {
-    if(sum % 2 === 0){
-        return 'pari';
-    } else if (sum % 2 !== 0) {
-        return 'dispari';
-    }
+    return sum % 2 === 0 ? 'pari' : 'dispari';
 }
 
-if (sumEvenOrOdd(sumNumber) === evenOrOdd && sumEvenOrOdd(sumNumber) === 'pari'){
-    console.log (`Hai indovinato la somma dei numeri tra ${userNumber} + ${randomNumber()} = ${sumNumber} è pari`);
-} else if (sumEvenOrOdd(sumNumber) === evenOrOdd && sumEvenOrOdd(sumNumber) === 'dispari') {
-    console.log (`Hai indovinato la somma dei numeri tra ${userNumber} + ${randomNumber()} = ${sumNumber} è dispari`);
-} else if (sumEvenOrOdd(sumNumber) === evenOrOdd && sumEvenOrOdd(sumNumber) !== 'pari') {
-    console.log (`Hai persola somma dei numeri tra ${userNumber} + ${randomNumber()} = ${sumNumber} è dispari`);
-} else if (sumEvenOrOdd(sumNumber) === evenOrOdd && sumEvenOrOdd(sumNumber) !== 'dispari') {
-    console.log (`Hai persola somma dei numeri tra ${userNumber} + ${randomNumber()} = ${sumNumber} è pari`);
+if (sumEvenOrOdd(sumNumber) === evenOrOdd){
+    console.log (`Hai indovinato la somma dei numeri tra ${userNumber} + ${saveRandomNumber} = ${sumNumber} è ${evenOrOdd}`);
+} else {
+    console.log (`Hai perso la somma dei numeri tra ${userNumber} + ${saveRandomNumber} = ${sumNumber} è ${sumEvenOrOdd(sumNumber)}`);
 }
